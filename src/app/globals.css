@@ -1,26 +1,125 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  /* Brand colours */
+  --color-green:      #3D5220;
+  --color-green-deep: #2C3B17;
+  --color-green-mid:  #4F6B2A;
+  --color-gold:       #C9A84C;
+  --color-gold-soft:  #E6D49A;
+  --color-bone:       #F8F5EE;
+  --color-bone-deep:  #EFE9DA;
+  --color-ink:        #1A1A1A;
+  --color-ink-mute:   #555048;
+
+  /* Typography */
+  --font-serif: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+  --font-sans:  'DM Sans', 'Inter', system-ui, sans-serif;
+  --font-mono:  'JetBrains Mono', ui-monospace, Menlo, monospace;
+
+  /* Spacing */
+  --spacing-section: clamp(72px, 9vw, 144px);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* ── Base reset ── */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  background: var(--color-bone);
+  color: var(--color-ink);
+  font-size: 16px;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+
+/* ── No border-radius anywhere (brand rule) ── */
+*, *::before, *::after { border-radius: 0 !important; }
+
+/* ── Typography scale ── */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  margin: 0;
+  letter-spacing: -0.005em;
+}
+h1 { font-size: clamp(48px, 7vw, 96px);  line-height: 1.02; }
+h2 { font-size: clamp(36px, 4.5vw, 64px); line-height: 1.08; }
+h3 { font-size: clamp(24px, 2.4vw, 34px); line-height: 1.15; }
+p  { margin: 0 0 1em; }
+
+/* ── Utility classes matching wireframe ── */
+.lede {
+  font-size: clamp(17px, 1.4vw, 21px);
+  line-height: 1.55;
+  color: var(--color-ink-mute);
+  max-width: 62ch;
+}
+
+.numlabel {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  font-size: 12px;
+  font-weight: 500;
+  display: block;
+  margin-bottom: 20px;
+}
+.numlabel span { color: var(--color-gold); margin-right: 10px; }
+
+.section-pad {
+  padding: clamp(72px, 9vw, 144px) clamp(24px, 5vw, 96px);
+  position: relative;
+}
+
+.container     { max-width: 1320px; margin: 0 auto; }
+.container-sm  { max-width: 980px;  margin: 0 auto; }
+
+/* ── Curved SVG divider ── */
+.divider {
+  display: block;
+  width: 100%;
+  height: 64px;
+  margin: 0;
+}
+
+/* ── Image placeholder ── */
+.ph {
+  position: relative;
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(61,82,32,0.06) 0 14px,
+      rgba(61,82,32,0.12) 14px 28px),
+    linear-gradient(180deg, #d9d3c2, #c5beac);
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(26,26,26,0.08);
+}
+.ph-dark {
+  background:
+    repeating-linear-gradient(135deg,
+      rgba(248,245,238,0.04) 0 14px,
+      rgba(248,245,238,0.08) 14px 28px),
+    linear-gradient(180deg, #2a3614, #1c2410);
+}
+.ph-cap {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 6px 12px;
+  background: rgba(248,245,238,0.88);
+  color: var(--color-ink);
+  border: 1px solid rgba(26,26,26,0.18);
+}
+
+/* ── Focus styles ── */
+:focus-visible {
+  outline: 2px solid var(--color-gold);
+  outline-offset: 3px;
 }

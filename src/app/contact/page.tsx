@@ -1,0 +1,197 @@
+'use client';
+
+import { useState } from 'react';
+import NavBar from '@/components/layout/NavBar';
+import Footer from '@/components/layout/Footer';
+import SectionLabel from '@/components/ui/SectionLabel';
+import Btn from '@/components/ui/Btn';
+
+export default function ContactPage() {
+  return (
+    <>
+      <NavBar />
+      <main>
+        <PageHero />
+        <ContactSplit />
+      </main>
+      <Footer />
+    </>
+  );
+}
+
+function PageHero() {
+  return (
+    <header style={{ position: 'relative', minHeight: '40vh', display: 'flex', alignItems: 'flex-end', padding: 'clamp(72px,9vw,120px) clamp(24px,5vw,96px) 56px', color: 'var(--color-bone)', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, background: 'repeating-linear-gradient(135deg,rgba(248,245,238,0.04) 0 18px,rgba(248,245,238,0.08) 18px 36px),linear-gradient(180deg,#3a4720 0%,#1c2410 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.65) 100%)' }} />
+      <div style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%' }}>
+        <div className="numlabel" style={{ color: 'var(--color-gold-soft)', marginBottom: 16 }}><span>—</span>CONTACT</div>
+        <h1 style={{ color: 'var(--color-bone)', maxWidth: '14ch', marginBottom: 14 }}>Get in Touch</h1>
+        <p style={{ color: 'rgba(248,245,238,0.85)', fontSize: 'clamp(17px,1.4vw,21px)', maxWidth: '52ch' }}>
+          For partnerships, investment inquiries, supply arrangements, or general enquiries.
+        </p>
+      </div>
+    </header>
+  );
+}
+
+function ContactSplit() {
+  return (
+    <section className="section-pad">
+      <div className="container">
+        <div className="contact-grid" style={{ display: 'grid', gridTemplateColumns: '1.1fr 0.9fr', gap: 'clamp(48px,7vw,96px)', alignItems: 'start' }}>
+          <ContactForm />
+          <ContactDetails />
+        </div>
+      </div>
+      <style>{`@media(max-width:860px){.contact-grid{grid-template-columns:1fr!important}}`}</style>
+    </section>
+  );
+}
+
+function ContactForm() {
+  const [form, setForm] = useState({ name: '', org: '', email: '', phone: '', type: '', message: '' });
+  const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle');
+
+  const handle = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) =>
+    setForm(f => ({ ...f, [e.target.name]: e.target.value }));
+
+  const submit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('sending');
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(form),
+      });
+      setStatus(res.ok ? 'sent' : 'error');
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  if (status === 'sent') {
+    return (
+      <div style={{ padding: '48px 40px', background: 'var(--color-green)', color: 'var(--color-bone)' }}>
+        <h2 style={{ color: 'var(--color-bone)', marginBottom: 16 }}>Message received.</h2>
+        <p style={{ color: 'rgba(248,245,238,0.8)' }}>
+          Thank you for reaching out. The Trust will respond within 2 business days.
+        </p>
+      </div>
+    );
+  }
+
+  const inputStyle: React.CSSProperties = {
+    width: '100%',
+    padding: '14px 16px',
+    fontFamily: 'var(--font-sans)',
+    fontSize: 15,
+    background: 'var(--color-bone-deep)',
+    border: '1px solid rgba(26,26,26,0.15)',
+    color: 'var(--color-ink)',
+    outline: 'none',
+  };
+
+  const labelStyle: React.CSSProperties = {
+    display: 'block',
+    fontSize: 12,
+    letterSpacing: '0.14em',
+    textTransform: 'uppercase',
+    color: 'var(--color-ink-mute)',
+    marginBottom: 8,
+  };
+
+  return (
+    <div>
+      <SectionLabel number="01" label="Send a Message" />
+      <form onSubmit={submit} style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
+        <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div>
+            <label htmlFor="name" style={labelStyle}>Full Name *</label>
+            <input id="name" name="name" required value={form.name} onChange={handle} style={inputStyle} placeholder="Your full name" />
+          </div>
+          <div>
+            <label htmlFor="org" style={labelStyle}>Organisation</label>
+            <input id="org" name="org" value={form.org} onChange={handle} style={inputStyle} placeholder="Company or institution" />
+          </div>
+        </div>
+        <div className="form-row" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+          <div>
+            <label htmlFor="email" style={labelStyle}>Email *</label>
+            <input id="email" name="email" type="email" required value={form.email} onChange={handle} style={inputStyle} placeholder="you@example.com" />
+          </div>
+          <div>
+            <label htmlFor="phone" style={labelStyle}>Phone</label>
+            <input id="phone" name="phone" type="tel" value={form.phone} onChange={handle} style={inputStyle} placeholder="+27 xx xxx xxxx" />
+          </div>
+        </div>
+        <div>
+          <label htmlFor="type" style={labelStyle}>Enquiry Type *</label>
+          <select id="type" name="type" required value={form.type} onChange={handle} style={{ ...inputStyle, appearance: 'none' }}>
+            <option value="">Select enquiry type</option>
+            <option value="Investment">Investment</option>
+            <option value="B2B Supply">B2B Supply</option>
+            <option value="Partnership">Partnership</option>
+            <option value="General">General</option>
+          </select>
+        </div>
+        <div>
+          <label htmlFor="message" style={labelStyle}>Message *</label>
+          <textarea id="message" name="message" required rows={6} value={form.message} onChange={handle} style={{ ...inputStyle, resize: 'vertical' }} placeholder="Describe your enquiry..." />
+        </div>
+        <div>
+          <Btn type="submit" variant="green" arrow disabled={status === 'sending'}>
+            {status === 'sending' ? 'Sending…' : 'Send Message'}
+          </Btn>
+          {status === 'error' && (
+            <p style={{ color: '#C0392B', fontSize: 13, marginTop: 10 }}>Something went wrong. Please email ntebo@hlapane.com directly.</p>
+          )}
+        </div>
+      </form>
+      <style>{`@media(max-width:640px){.form-row{grid-template-columns:1fr!important}}`}</style>
+    </div>
+  );
+}
+
+function ContactDetails() {
+  return (
+    <div style={{ paddingTop: 40 }}>
+      <SectionLabel number="02" label="Contact Details" />
+
+      <div style={{ marginBottom: 40 }}>
+        <div style={{ fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-gold)', marginBottom: 12 }}>Email</div>
+        <a href="mailto:ntebo@hlapane.com" style={{ fontFamily: 'var(--font-serif)', fontSize: 22, color: 'var(--color-green)' }}>ntebo@hlapane.com</a>
+      </div>
+
+      <div style={{ marginBottom: 40 }}>
+        <div style={{ fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-gold)', marginBottom: 12 }}>Phone</div>
+        <div style={{ fontFamily: 'var(--font-serif)', fontSize: 20, lineHeight: 1.4 }}>
+          <a href="tel:+27824118481" style={{ display: 'block' }}>082 411 8481</a>
+          <a href="tel:+27117609348" style={{ display: 'block' }}>011 760 9348</a>
+        </div>
+      </div>
+
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 24 }}>
+        <div style={{ padding: '24px 20px', border: '1px solid rgba(26,26,26,0.12)', background: 'var(--color-bone-deep)' }}>
+          <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-gold)', marginBottom: 12 }}>Farm Address</div>
+          <address style={{ fontStyle: 'normal', fontFamily: 'var(--font-serif)', fontSize: 18, lineHeight: 1.5, color: 'var(--color-ink)' }}>
+            BLK 25 Fourie Farm<br />
+            Bethlehem, Free State<br />
+            South Africa, 9701<br />
+            <span style={{ fontSize: 14, color: 'var(--color-ink-mute)', fontFamily: 'var(--font-sans)' }}>GPS: Lat −28.138, Long 28.141</span>
+          </address>
+        </div>
+
+        <div style={{ padding: '24px 20px', border: '1px solid rgba(26,26,26,0.12)', background: 'var(--color-bone-deep)' }}>
+          <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-gold)', marginBottom: 12 }}>Office Address</div>
+          <address style={{ fontStyle: 'normal', fontFamily: 'var(--font-serif)', fontSize: 18, lineHeight: 1.5, color: 'var(--color-ink)' }}>
+            Unit 9, Timbavati Place B<br />
+            470 Timbavati Street<br />
+            Moreletapark, Pretoria
+          </address>
+        </div>
+      </div>
+    </div>
+  );
+}
