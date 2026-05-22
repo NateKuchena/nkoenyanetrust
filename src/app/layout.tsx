@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, DM_Sans, JetBrains_Mono } from "next/font/google";
+import { Playfair_Display, Poppins, JetBrains_Mono } from "next/font/google";
 import "./globals.css";
 
-const cormorant = Cormorant_Garamond({
+const playfair = Playfair_Display({
   variable: "--font-serif",
   subsets: ["latin"],
-  weight: ["400", "500", "600"],
+  weight: ["400", "600", "700"],
   display: "swap",
 });
 
-const dmSans = DM_Sans({
+const poppins = Poppins({
   variable: "--font-sans",
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
   display: "swap",
 });
 
@@ -24,56 +24,56 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "The Nkoenyane Family Trust | Premium Agriculture, Free State",
+  title: "Khatleng Farms | Commercial Agriculture, Bethlehem Free State",
   description:
-    "A technology-driven, governance-led agricultural enterprise producing traceable maize, sunflower, livestock and vegetables from 200 hectares in Bethlehem, Free State.",
+    "Khatleng Farms is a commercial agricultural enterprise in Bethlehem, Free State — producing grain, livestock and fresh vegetables from 200 hectares of freehold farmland.",
   openGraph: {
     type: "website",
     locale: "en_ZA",
-    siteName: "The Nkoenyane Family Trust",
+    siteName: "Khatleng Farms",
   },
 };
 
 const structuredData = {
-  '@context': 'https://schema.org',
-  '@graph': [
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      '@type': 'Organization',
-      '@id': 'https://www.nkoenyane.co.za/#org',
-      name: 'The Nkoenyane Family Trust',
-      url: 'https://www.nkoenyane.co.za',
-      email: 'ntebo@hlapane.com',
-      telephone: '+27824118481',
-      description: 'A technology-driven, governance-led agricultural enterprise producing traceable maize, sunflower, livestock and vegetables from 200 hectares in Bethlehem, Free State.',
-      foundingDate: '2000',
-      legalName: 'The Nkoenyane Family Trust (IT 1254/00)',
+      "@type": "Organization",
+      "@id": "https://www.khatlengfarms.co.za/#org",
+      name: "Khatleng Farms",
+      alternateName: "Nkoenyane Family Trust trading as Khatleng Farms",
+      url: "https://www.khatlengfarms.co.za",
+      email: "ntebo@hlapane.com",
+      telephone: "+27824118481",
+      description:
+        "A commercial agricultural enterprise in Bethlehem, Free State — producing grain, livestock and fresh vegetables from 200 hectares of freehold farmland.",
+      foundingDate: "2000",
+      legalName: "Nkoenyane Family Trust (IT 1254/00)",
     },
     {
-      '@type': 'LocalBusiness',
-      '@id': 'https://www.nkoenyane.co.za/#farm',
-      name: 'BLK 25 Fourie Farm',
-      parentOrganization: { '@id': 'https://www.nkoenyane.co.za/#org' },
+      "@type": "LocalBusiness",
+      "@id": "https://www.khatlengfarms.co.za/#farm",
+      name: "Khatleng Farms — BLK 25 Fourie Farm",
+      parentOrganization: { "@id": "https://www.khatlengfarms.co.za/#org" },
       address: {
-        '@type': 'PostalAddress',
-        addressLocality: 'Bethlehem',
-        addressRegion: 'Free State',
-        postalCode: '9701',
-        addressCountry: 'ZA',
+        "@type": "PostalAddress",
+        addressLocality: "Bethlehem",
+        addressRegion: "Free State",
+        postalCode: "9701",
+        addressCountry: "ZA",
       },
-      geo: { '@type': 'GeoCoordinates', latitude: -28.138, longitude: 28.141 },
+      geo: { "@type": "GeoCoordinates", latitude: -28.138, longitude: 28.141 },
     },
   ],
 };
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: Readonly<{ children: React.ReactNode }>) {
   return (
     <html
       lang="en"
-      className={`${cormorant.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
+      className={`${playfair.variable} ${poppins.variable} ${jetbrainsMono.variable}`}
     >
       <head>
         <script

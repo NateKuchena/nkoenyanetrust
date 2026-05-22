@@ -1,9 +1,9 @@
 import NavBar from '@/components/layout/NavBar';
 import Footer from '@/components/layout/Footer';
-import SectionLabel from '@/components/ui/SectionLabel';
 import Btn from '@/components/ui/Btn';
 import Divider from '@/components/ui/Divider';
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
+import SectionLabel from '@/components/ui/SectionLabel';
 
 export default function HomePage() {
   return (
@@ -11,17 +11,24 @@ export default function HomePage() {
       <NavBar />
       <main>
         <Hero />
+        <TheStory />
+        <Divider from="#F4EBDD" to="#E8D5C0" />
         <StatsStrip />
-        <Divider from="#F8F5EE" to="#F8F5EE" />
-        <MissionVision />
-        <Divider from="#F8F5EE" to="#3D5220" />
-        <SustainabilityStrip />
-        <Divider from="#3D5220" to="#F8F5EE" />
-        <FarmTeaser />
-        <IncomeStreams />
-        <LeadershipQuote />
-        <Divider from="#3D5220" to="#F8F5EE" />
+        <Divider from="#E8D5C0" to="#F4EBDD" />
+        <ProductionZones />
+        <Divider from="#F4EBDD" to="#3D4F1F" />
+        <WhyBethlehem />
+        <Divider from="#3D4F1F" to="#F4EBDD" />
+        <FarmMap />
+        <Divider from="#F4EBDD" to="#E8D5C0" />
+        <OurJourney />
+        <Divider from="#E8D5C0" to="#F4EBDD" />
+        <FarmPhilosophy />
+        <Divider from="#F4EBDD" to="#E8D5C0" />
         <ImpactSection />
+        <Divider from="#E8D5C0" to="#3D4F1F" />
+        <QuoteCloser />
+        <Divider from="#3D4F1F" to="#F4EBDD" />
         <NewsSection />
       </main>
       <Footer />
@@ -29,400 +36,373 @@ export default function HomePage() {
   );
 }
 
-/* ── Hero ── */
+/* ─────────────────── HERO ─────────────────── */
 function Hero() {
   return (
-    <header
-      style={{
-        position: 'relative',
-        minHeight: '86vh',
-        display: 'flex',
-        alignItems: 'flex-end',
-        padding: 'clamp(72px,9vw,144px) clamp(24px,5vw,96px) 80px',
-        color: 'var(--color-bone)',
-        overflow: 'hidden',
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background:
-            'repeating-linear-gradient(135deg,rgba(248,245,238,0.04) 0 18px,rgba(248,245,238,0.08) 18px 36px),linear-gradient(180deg,#3a4720 0%,#1c2410 100%)',
-        }}
-      />
-      <div
-        style={{
-          position: 'absolute',
-          inset: 0,
-          background:
-            'linear-gradient(180deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.55) 60%,rgba(0,0,0,0.78) 100%)',
-        }}
-      />
+    <header style={{ position: 'relative', minHeight: '90vh', display: 'flex', alignItems: 'flex-end', padding: 'clamp(96px,10vw,160px) clamp(24px,5vw,96px) 96px', color: 'var(--color-bone)', overflow: 'hidden' }}>
+      <div style={{ position: 'absolute', inset: 0, background: 'repeating-linear-gradient(135deg,rgba(244,235,221,0.03) 0 20px,rgba(244,235,221,0.06) 20px 40px),linear-gradient(180deg,#3a3520 0%,#1e1a0c 100%)' }} />
+      <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(0,0,0,0.1) 0%,rgba(0,0,0,0.45) 55%,rgba(0,0,0,0.75) 100%)' }} />
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%' }}>
-        <div className="numlabel" style={{ color: 'var(--color-gold-soft)', marginBottom: 24 }}>
-          <span>—</span>NKOENYANE FAMILY TRUST · BETHLEHEM, FREE STATE
+        <div className="numlabel" style={{ color: 'rgba(244,235,221,0.6)', marginBottom: 28 }}>
+          <span>—</span>KHATLENG FARMS · BETHLEHEM, FREE STATE
         </div>
-        <h1 style={{ color: 'var(--color-bone)', maxWidth: '14ch', marginBottom: 24 }}>
-          Rooted in the Land.<br />Built for the Future.
+        <h1 style={{ color: 'var(--color-bone)', maxWidth: '15ch', marginBottom: 28, fontWeight: 400 }}>
+          Rooted in Legacy.<br />Growing the Future.
         </h1>
-        <p
-          style={{
-            color: 'rgba(248,245,238,0.85)',
-            fontSize: 'clamp(17px,1.4vw,21px)',
-            maxWidth: '56ch',
-            marginBottom: 36,
-          }}
-        >
-          200 hectares. Four income streams. One generational vision.
+        <p style={{ color: 'rgba(244,235,221,0.82)', fontSize: 'clamp(16px,1.4vw,20px)', maxWidth: '58ch', marginBottom: 44, lineHeight: 1.65 }}>
+          Khatleng Farms is a modern agricultural enterprise based in Bethlehem, Free State — focused on sustainable grain production, livestock development and protected tunnel farming.
         </p>
         <div style={{ display: 'flex', gap: 16, flexWrap: 'wrap' }}>
-          <Btn href="/the-farm" variant="gold" arrow>Explore the Farm</Btn>
-          <Btn href="/invest" variant="ghost" arrow>Investment Overview</Btn>
+          <Btn href="/our-farm" variant="gold" arrow>Explore Our Farm</Btn>
+          <Btn href="/production" variant="ghost" arrow>View Our Operations</Btn>
         </div>
       </div>
     </header>
   );
 }
 
-/* ── Stats ── */
+/* ─────────────────── THE STORY ─────────────────── */
+function TheStory() {
+  return (
+    <section className="section-pad">
+      <div className="container">
+        <div className="story-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(56px,8vw,120px)', alignItems: 'center' }}>
+          <ImagePlaceholder caption="img · aerial farm · Free State · warm tones" height="clamp(440px,48vw,580px)" />
+          <div>
+            <SectionLabel number="" label="Our Story" />
+            <h2 style={{ marginBottom: 28, fontWeight: 400 }}>
+              What began as a father's vision in 2000 is now becoming reality.
+            </h2>
+            <p style={{ color: 'var(--color-ink-mute)', lineHeight: 1.75, marginBottom: 16 }}>
+              Khatleng Farms was born from a vision planted more than two decades ago.
+            </p>
+            <p style={{ color: 'var(--color-ink-mute)', lineHeight: 1.75, marginBottom: 16 }}>
+              In 2000, the farm was acquired by our family with the hope that one day the land would become more than property — that it would become a legacy. Like many dreams rooted in agriculture, it was built on sacrifice, patience, resilience and an unwavering belief in the future.
+            </p>
+            <p style={{ color: 'var(--color-ink-mute)', lineHeight: 1.75, marginBottom: 32 }}>
+              Today, that vision is being carried forward by the next generation. We are returning to the land with a renewed sense of purpose: to build something meaningful not only for our family, but for our community and future generations.
+            </p>
+            <Btn href="/about" variant="outline-green" arrow>Read Our Full Story</Btn>
+          </div>
+        </div>
+      </div>
+      <style>{`@media(max-width:860px){.story-grid{grid-template-columns:1fr!important}}`}</style>
+    </section>
+  );
+}
+
+/* ─────────────────── STATS STRIP ─────────────────── */
 function StatsStrip() {
   const stats = [
-    { number: '200', unit: 'ha', label: 'Freehold Land — Owned Since 2000' },
-    { number: '100', unit: 'ha', label: 'Production-Ready Arable Land' },
-    { number: '4', label: 'Diversified Income Streams' },
-    { number: '18–25', label: 'Jobs Created in Year 1' },
-    { number: 'R6.2M', label: 'Projected Revenue by Year 5' },
+    { number: '200', unit: 'ha', label: 'Freehold Land' },
+    { number: '26', unit: 'yrs', label: 'In the Family' },
+    { number: '4', label: 'Production Zones' },
+    { number: 'Free State', label: 'Bethlehem Highlands' },
+    { number: '1,651', unit: 'm', label: 'Above Sea Level' },
   ];
-
   return (
     <>
-      <div
-        className="stats-grid"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(5,1fr)',
-          borderTop: '1px solid rgba(26,26,26,0.12)',
-          borderBottom: '1px solid rgba(26,26,26,0.12)',
-        }}
-      >
+      <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', background: 'var(--color-bone-deep)', borderTop: '1px solid rgba(47,47,47,0.1)', borderBottom: '1px solid rgba(47,47,47,0.1)' }}>
         {stats.map(({ number, unit, label }, i) => (
-          <div
-            key={i}
-            style={{
-              padding: 'clamp(32px,4vw,48px) clamp(16px,2.5vw,36px)',
-              borderRight: i < stats.length - 1 ? '1px solid rgba(26,26,26,0.12)' : 'none',
-            }}
-          >
-            <div
-              style={{
-                fontFamily: 'var(--font-serif)',
-                fontSize: 'clamp(28px,3vw,48px)',
-                color: 'var(--color-green)',
-                lineHeight: 1,
-                marginBottom: 10,
-              }}
-            >
+          <div key={i} style={{ padding: 'clamp(32px,4vw,52px) clamp(16px,2.5vw,32px)', borderRight: i < stats.length - 1 ? '1px solid rgba(47,47,47,0.1)' : 'none' }}>
+            <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px,3vw,44px)', color: 'var(--color-green)', lineHeight: 1, marginBottom: 10 }}>
               {number}
-              {unit && (
-                <small
-                  style={{
-                    color: 'var(--color-gold)',
-                    fontSize: '0.5em',
-                    verticalAlign: 'super',
-                    marginLeft: 3,
-                    fontFamily: 'var(--font-sans)',
-                  }}
-                >
-                  {unit}
-                </small>
-              )}
+              {unit && <small style={{ color: 'var(--color-brown)', fontSize: '0.5em', verticalAlign: 'super', marginLeft: 3, fontFamily: 'var(--font-sans)' }}>{unit}</small>}
             </div>
-            <div
-              style={{
-                fontSize: 11,
-                letterSpacing: '0.15em',
-                textTransform: 'uppercase',
-                color: 'var(--color-ink-mute)',
-                lineHeight: 1.4,
-              }}
-            >
-              {label}
-            </div>
+            <div style={{ fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--color-ink-mute)', lineHeight: 1.4 }}>{label}</div>
           </div>
         ))}
       </div>
       <style>{`
-        @media(max-width:1100px){.stats-grid{grid-template-columns:repeat(2,1fr)!important}}
-        @media(max-width:860px){.stats-grid{grid-template-columns:1fr!important}}
-        .stats-grid>div{border-bottom:1px solid rgba(26,26,26,0.12)}
+        @media(max-width:1100px){.stats-grid{grid-template-columns:repeat(3,1fr)!important}}
+        @media(max-width:860px){.stats-grid{grid-template-columns:repeat(2,1fr)!important}}
+        .stats-grid>div{border-bottom:1px solid rgba(47,47,47,0.1)}
       `}</style>
     </>
   );
 }
 
-/* ── Mission / Vision ── */
-function MissionVision() {
-  return (
-    <section className="section-pad" id="our-purpose">
-      <div className="container">
-        <div className="twocol-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(40px,6vw,96px)', alignItems: 'start' }}>
-          <div>
-            <SectionLabel number="01" label="Our Purpose" />
-            <h2 style={{ marginBottom: 24 }}>
-              Cultivating food, livelihoods and legacy from the Free State heartland.
-            </h2>
-            <p className="lede">
-              To leverage technology, disciplined governance, and responsible stewardship to create a
-              profitable, scalable, and socially impactful agricultural business that delivers enduring
-              value to investors, customers, and the broader community.
-            </p>
-          </div>
-          <div>
-            <SectionLabel number="02" label="Our Vision" />
-            <h2 style={{ marginBottom: 24 }}>
-              A flagship rural enterprise that proves modern South African agriculture can be premium,
-              traceable and proudly local.
-            </h2>
-            <p className="lede">
-              To be a leading producer of premium, fully traceable, and sustainably cultivated
-              agricultural products — recognised for exceptional operational standards, stewardship,
-              and integrity.
-            </p>
-          </div>
-        </div>
-      </div>
-      <style>{`@media(max-width:860px){.twocol-grid{grid-template-columns:1fr!important}}`}</style>
-    </section>
-  );
-}
-
-/* ── Sustainability strip ── */
-function SustainabilityStrip() {
-  const items = [
-    {
-      icon: (
-        <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4}>
-          <path d="M12 2 L20 7 L20 17 L12 22 L4 17 L4 7 Z"/><path d="M12 2 L12 22 M4 7 L20 17 M20 7 L4 17"/>
-        </svg>
-      ),
-      title: 'Fully Traceable Provenance',
-      body: 'Verified quality and origin for every product — from soil to shelf.',
-    },
-    {
-      icon: (
-        <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4}>
-          <circle cx={12} cy={12} r={3}/><path d="M12 2V6M12 18V22M2 12H6M18 12H22M5 5L8 8M16 16L19 19M5 19L8 16M16 8L19 5"/>
-        </svg>
-      ),
-      title: '4IR Technology Integration',
-      body: 'IoT monitoring, data analytics, and automated workflows embedded into every operational zone.',
-    },
-    {
-      icon: (
-        <svg width={22} height={22} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.4}>
-          <circle cx={12} cy={12} r={10}/><path d="M2 12H22M12 2C15 6 15 18 12 22C9 18 9 6 12 2"/>
-        </svg>
-      ),
-      title: '10% Farm Worker Profit Sharing',
-      body: 'Formal trust resolution — all permanent staff share in the enterprise they help build.',
-    },
-  ];
-
-  return (
-    <section className="section-pad" style={{ background: 'var(--color-green)', color: 'var(--color-bone)' }}>
-      <div className="container">
-        <div style={{ maxWidth: 720, marginBottom: 'clamp(48px,6vw,80px)' }}>
-          <SectionLabel number="03" label="Principles of Practice" gold />
-          <h2 style={{ color: 'var(--color-bone)' }}>Built on traceability, technology and shared prosperity.</h2>
-        </div>
-        <div className="sus-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 'clamp(32px,5vw,80px)' }}>
-          {items.map(({ icon, title, body }) => (
-            <div key={title}>
-              <div style={{ width: 56, height: 56, marginBottom: 24, display: 'grid', placeItems: 'center', border: '1px solid var(--color-gold)', color: 'var(--color-gold)' }}>{icon}</div>
-              <h3 style={{ color: 'var(--color-bone)', marginBottom: 12 }}>{title}</h3>
-              <p style={{ color: 'rgba(248,245,238,0.75)', margin: 0, maxWidth: '36ch' }}>{body}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-      <style>{`@media(max-width:860px){.sus-grid{grid-template-columns:1fr!important}}`}</style>
-    </section>
-  );
-}
-
-/* ── Farm teaser ── */
-function FarmTeaser() {
-  return (
-    <section style={{ padding: '40px clamp(24px,5vw,96px) clamp(72px,9vw,144px)' }}>
-      <div className="container">
-        <div style={{ height: 'clamp(440px,50vw,620px)', position: 'relative', overflow: 'hidden' }}>
-          <ImagePlaceholder caption="img · aerial farm masterplan · 2400×1400 · warm tones" height="100%" />
-          <div
-            style={{
-              position: 'absolute', inset: 0,
-              background: 'linear-gradient(180deg,rgba(0,0,0,0.05),rgba(0,0,0,0.6))',
-              display: 'flex', flexDirection: 'column', justifyContent: 'flex-end',
-              padding: 'clamp(32px,5vw,56px)', color: 'var(--color-bone)',
-            }}
-          >
-            <SectionLabel number="04" label="The Farm" gold />
-            <h2 style={{ color: 'var(--color-bone)', maxWidth: '22ch', marginBottom: 16 }}>
-              BLK 25 Fourie Farm — Bethlehem, Free State.
-            </h2>
-            <p style={{ maxWidth: '60ch', color: 'rgba(248,245,238,0.85)', marginBottom: 28 }}>
-              200 hectares of freehold agricultural land, owned since 2000 and held unencumbered.
-              No mortgage, no rental, no tenure risk.
-            </p>
-            <div><Btn href="/the-farm" variant="gold" arrow>Explore the Farm</Btn></div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
-}
-
-/* ── Income streams ── */
-function IncomeStreams() {
-  const streams = [
-    { phase: 'Stream 01', title: 'Dryland Crops', body: '80ha Yellow Maize + 20ha Sunflower. Rotation improves soil health and income diversification.', items: ['Yellow Maize (80ha)', 'Sunflower (20ha)', 'AFGRI Bethlehem Silo off-take'], tag: 'Live · Year 1', future: false },
-    { phase: 'Stream 02', title: 'Tunnel Vegetables', body: '8 production tunnels, 8m × 30m each. Drip irrigation, multi-crop cycles, year-round harvests.', items: ['Tomatoes', 'Peppers', 'Spinach', 'Lettuce'], tag: 'Live · Year 1', future: false },
-    { phase: 'Stream 03', title: 'Commercial Livestock', body: 'Opening herd: 50 cattle and 50 sheep. Monthly and quarterly auctions at Bethlehem.', items: ['50 Cattle (Bonsmara/Simmental)', '50 Sheep', 'Monthly & quarterly auctions'], tag: 'Live · Year 1', future: false },
-    { phase: 'Stream 04', title: 'Beef Stud Programme', body: '5 stud bulls — 12+ month maturation. First stud sales Year 2 at R80,000–R150,000 per animal.', items: ['Bonsmara/Simmental genetics', '5 stud bulls', 'Premium stud sales from Year 2'], tag: 'Year 2 →', future: true },
-  ];
-
-  return (
-    <section className="section-pad" style={{ background: 'var(--color-bone-deep)' }}>
-      <div className="container">
-        <div style={{ maxWidth: 720, marginBottom: 'clamp(48px,6vw,80px)' }}>
-          <SectionLabel number="05" label="What We Produce" />
-          <h2 style={{ marginBottom: 16 }}>Four income streams. One resilient operation.</h2>
-          <p className="lede">Diversified by design — no single buyer exceeds 50% of revenue.</p>
-        </div>
-        <div className="cards-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 20 }}>
-          {streams.map(({ phase, title, body, items, tag, future }) => (
-            <article
-              key={title}
-              style={{
-                background: future ? 'var(--color-green-deep)' : 'var(--color-bone)',
-                border: `1px solid ${future ? 'var(--color-green-deep)' : 'rgba(26,26,26,0.12)'}`,
-                padding: '32px 28px', display: 'flex', flexDirection: 'column', minHeight: 440,
-              }}
-            >
-              <div style={{ height: 120, margin: '-8px -28px 20px' }}>
-                <ImagePlaceholder caption={`img · ${title.toLowerCase()}`} dark={future} height={120} />
-              </div>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 22, color: 'var(--color-gold)', marginBottom: 6 }}>{phase}</div>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: future ? 'var(--color-bone)' : 'var(--color-ink)', marginBottom: 10, lineHeight: 1.2 }}>{title}</div>
-              <p style={{ fontSize: 13, color: future ? 'rgba(248,245,238,0.75)' : 'var(--color-ink-mute)', marginBottom: 0 }}>{body}</p>
-              <ul style={{ padding: 0, margin: 'auto 0 0', listStyle: 'none', borderTop: `1px solid ${future ? 'rgba(248,245,238,0.15)' : 'rgba(26,26,26,0.12)'}` }}>
-                {items.map(item => (
-                  <li key={item} style={{ padding: '8px 0', borderBottom: `1px solid ${future ? 'rgba(248,245,238,0.15)' : 'rgba(26,26,26,0.12)'}`, fontSize: 13, color: future ? 'rgba(248,245,238,0.8)' : 'var(--color-ink)', display: 'flex', gap: 8 }}>
-                    <span style={{ color: 'var(--color-gold)' }}>—</span>{item}
-                  </li>
-                ))}
-              </ul>
-              <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: future ? 'var(--color-gold-soft)' : 'var(--color-ink-mute)', marginTop: 12 }}>{tag}</div>
-            </article>
-          ))}
-        </div>
-      </div>
-      <style>{`
-        @media(max-width:1100px){.cards-grid{grid-template-columns:repeat(2,1fr)!important}}
-        @media(max-width:860px){.cards-grid{grid-template-columns:1fr!important}}
-      `}</style>
-    </section>
-  );
-}
-
-/* ── Leadership quote ── */
-function LeadershipQuote() {
-  return (
-    <section
-      style={{
-        position: 'relative',
-        padding: 'clamp(80px,10vw,140px) clamp(24px,5vw,96px)',
-        background: 'var(--color-green)',
-        color: 'var(--color-bone)',
-        overflow: 'hidden',
-      }}
-    >
-      <span aria-hidden="true" style={{ position: 'absolute', top: 24, left: 'clamp(24px,5vw,96px)', fontFamily: 'var(--font-serif)', fontSize: 200, lineHeight: 1, color: 'var(--color-gold)', opacity: 0.5, pointerEvents: 'none' }}>
-        &ldquo;
-      </span>
-      <div className="container quote-inner" style={{ position: 'relative', display: 'grid', gridTemplateColumns: '160px 1fr', gap: 48, alignItems: 'center' }}>
-        <ImagePlaceholder caption="portrait · b&w" dark style={{ width: 160, height: 200 }} />
-        <div>
-          <p style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(22px,2.4vw,36px)', lineHeight: 1.25, color: 'var(--color-bone)', maxWidth: '40ch', margin: 0 }}>
-            Our goal is not simply to farm land — it is to build an institution. One that is accountable, traceable, and built to outlast us.
-          </p>
-          <div style={{ marginTop: 28, fontSize: 13, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-gold)' }}>
-            Mmatebogo Elizabeth Nkoenyane
-            <small style={{ display: 'block', color: 'rgba(248,245,238,0.7)', marginTop: 5, letterSpacing: '0.08em' }}>Trustee</small>
-          </div>
-        </div>
-      </div>
-      <style>{`@media(max-width:860px){.quote-inner{grid-template-columns:1fr!important}}`}</style>
-    </section>
-  );
-}
-
-/* ── Impact ── */
-function ImpactSection() {
-  const impacts = [
-    { stat: '100%', title: 'Black-Owned, Female-Led', body: 'DALRRD and BFS transformation priority enterprise.' },
-    { stat: '46/50', title: 'BFS Scorecard (Est.)', body: 'Minimum required: 20 points. Full compliance across all criteria.' },
-    { stat: 'SDG 1,2,8,9,15', title: 'Global Alignment', body: 'Measurable contribution to people, planet and the rural economy.' },
+/* ─────────────────── PRODUCTION ZONES ─────────────────── */
+function ProductionZones() {
+  const zones = [
+    { icon: '🌽', name: 'Grain Production', desc: 'Yellow Maize, 80ha dryland production', status: 'Live', statusColor: 'var(--color-green)' },
+    { icon: '🌻', name: 'Field Crops', desc: 'Sunflower rotation, oilseed production', status: 'Live', statusColor: 'var(--color-green)' },
+    { icon: '🐄', name: 'Cattle', desc: 'Commercial herd + Bonsmara/Simmental stud programme', status: 'Live', statusColor: 'var(--color-green)' },
+    { icon: '🐑', name: 'Sheep', desc: 'Commercial flock, rotational grazing', status: 'Live', statusColor: 'var(--color-green)' },
+    { icon: '🥚', name: 'Free Range Eggs', desc: 'Small-scale, premium local supply', status: 'Coming Soon', statusColor: 'var(--color-brown)' },
+    { icon: '🌱', name: 'Tunnel Farming', desc: '8 protected tunnels — tomatoes, peppers, spinach, lettuce', status: 'Live', statusColor: 'var(--color-green)' },
   ];
 
   return (
     <section className="section-pad">
       <div className="container">
-        <div style={{ maxWidth: 720, marginBottom: 'clamp(48px,6vw,80px)' }}>
-          <SectionLabel number="04" label="Our Impact" />
-          <h2>Transformation by design, not by default.</h2>
+        <div style={{ maxWidth: 760, marginBottom: 'clamp(56px,7vw,88px)' }}>
+          <SectionLabel number="" label="What We Produce" />
+          <h2 style={{ fontWeight: 400 }}>From grain fields to livestock camps — four production zones, one integrated farm.</h2>
         </div>
-        <div className="impact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 32 }}>
-          {impacts.map(({ stat, title, body }) => (
-            <div key={title} style={{ borderTop: '2px solid var(--color-gold)', paddingTop: 28 }}>
-              <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px,4vw,58px)', color: 'var(--color-green)', lineHeight: 1, marginBottom: 12 }}>{stat}</div>
-              <h3 style={{ marginBottom: 10 }}>{title}</h3>
-              <p style={{ color: 'var(--color-ink-mute)', margin: 0 }}>{body}</p>
+        <div className="zones-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 20 }}>
+          {zones.map(({ icon, name, desc, status, statusColor }) => (
+            <div key={name} style={{ padding: '32px 28px', background: 'var(--color-bone-deep)', border: '1px solid rgba(47,47,47,0.1)', display: 'flex', flexDirection: 'column', gap: 12 }}>
+              <div style={{ fontSize: 32 }}>{icon}</div>
+              <h3 style={{ fontSize: 'clamp(18px,1.6vw,22px)', marginBottom: 4 }}>{name}</h3>
+              <p style={{ fontSize: 14, color: 'var(--color-ink-mute)', margin: 0, lineHeight: 1.6, flexGrow: 1 }}>{desc}</p>
+              <div style={{ fontSize: 11, letterSpacing: '0.16em', textTransform: 'uppercase', color: statusColor, fontWeight: 500, marginTop: 4 }}>{status}</div>
             </div>
           ))}
         </div>
+        <div style={{ marginTop: 48 }}>
+          <Btn href="/production" variant="outline-green" arrow>View All Production</Btn>
+        </div>
       </div>
-      <style>{`@media(max-width:860px){.impact-grid{grid-template-columns:1fr!important}}`}</style>
+      <style>{`
+        @media(max-width:860px){.zones-grid{grid-template-columns:repeat(2,1fr)!important}}
+        @media(max-width:560px){.zones-grid{grid-template-columns:1fr!important}}
+      `}</style>
     </section>
   );
 }
 
-/* ── News ── */
-function NewsSection() {
-  const articles = [
-    { img: 'img · tunnel install', category: 'Operations', date: '15 · 04 · 2026', title: 'First tunnel commissioned ahead of Q2 planting cycle.', body: 'Tunnel 01 is online — drip irrigation, climate sensors and substrate beds calibrated for the first crop.' },
-    { img: 'img · cattle in veld', category: 'Livestock', date: '02 · 04 · 2026', title: 'Rotational grazing programme expanded to the eastern camp.', body: 'A measured rotation across natural Free State grass veld — better soil, better animals, better meat.' },
-    { img: 'img · meeting room', category: 'Governance', date: '22 · 03 · 2026', title: 'Trust formalises three-year financial reporting cadence.', body: 'Quarterly investor reporting, audited annuals, and an independent compliance review from day one.' },
+/* ─────────────────── WHY BETHLEHEM ─────────────────── */
+function WhyBethlehem() {
+  const facts = [
+    { number: '772mm', label: 'Average Annual Rainfall' },
+    { number: '4,047hrs', label: 'Sunshine Per Year' },
+    { number: '1,651m', label: 'Above Sea Level' },
+  ];
+
+  return (
+    <section className="section-pad" style={{ background: 'var(--color-green-deep)', color: 'var(--color-bone)' }}>
+      <div className="container">
+        <div className="bethlehem-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(56px,8vw,112px)', alignItems: 'center' }}>
+          <div>
+            <SectionLabel number="" label="Grown Here for a Reason" light />
+            <h2 style={{ color: 'var(--color-bone)', fontWeight: 400, marginBottom: 28 }}>Located in the fertile highlands of the Free State.</h2>
+            <p style={{ color: 'rgba(244,235,221,0.8)', lineHeight: 1.75, marginBottom: 16 }}>
+              Bethlehem sits at 1,651 metres above sea level in the heart of South Africa's grain belt. With an average annual rainfall of 772mm, open grazing land, fertile soils and over 4,000 sunshine hours a year, it is one of the country's most productive agricultural regions.
+            </p>
+            <p style={{ color: 'rgba(244,235,221,0.8)', lineHeight: 1.75 }}>
+              This is not coincidence. This is where our farm was always meant to grow.
+            </p>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {facts.map(({ number, label }, i) => (
+              <div key={label} style={{ padding: '32px 0', borderBottom: i < facts.length - 1 ? '1px solid rgba(244,235,221,0.15)' : 'none' }}>
+                <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(36px,4vw,56px)', color: 'var(--color-brown-light)', lineHeight: 1, marginBottom: 8 }}>{number}</div>
+                <div style={{ fontSize: 12, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(244,235,221,0.6)' }}>{label}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <style>{`@media(max-width:860px){.bethlehem-grid{grid-template-columns:1fr!important}}`}</style>
+    </section>
+  );
+}
+
+/* ─────────────────── FARM MAP ─────────────────── */
+function FarmMap() {
+  const zones = [
+    { color: '#4A7FCB', label: 'Grain Fields', meta: '100ha' },
+    { color: '#556B2F', label: 'Tunnel Farming', meta: '8 tunnels' },
+    { color: '#C0392B', label: 'Livestock Handling', meta: '' },
+    { color: '#E67E22', label: 'Grazing Camps', meta: '106ha' },
+    { color: '#2F2F2F', label: 'Operational Hub', meta: '' },
+  ];
+
+  return (
+    <section className="section-pad">
+      <div className="container">
+        <div style={{ maxWidth: 720, marginBottom: 'clamp(48px,6vw,72px)' }}>
+          <SectionLabel number="" label="The Farm" />
+          <h2 style={{ fontWeight: 400 }}>200 hectares. Five operational zones.</h2>
+        </div>
+        <div style={{ position: 'relative', height: 'clamp(380px,46vw,620px)', background: 'repeating-linear-gradient(135deg,rgba(85,107,47,0.06) 0 18px,rgba(85,107,47,0.12) 18px 36px),linear-gradient(180deg,#d4c4ae,#b9a98c)', border: '1px solid rgba(47,47,47,0.12)', marginBottom: 24 }}>
+          <svg style={{ position: 'absolute', inset: 0, width: '100%', height: '100%' }} viewBox="0 0 800 500" preserveAspectRatio="xMidYMid meet">
+            <polygon points="80,80 420,80 420,300 80,300" fill="rgba(74,127,203,0.5)" stroke="#4A7FCB" strokeWidth={2}/>
+            <text x="250" y="198" textAnchor="middle" fontSize={13} fill="#fff" fontFamily="monospace">Grain Fields</text>
+            <polygon points="430,80 580,80 580,200 430,200" fill="rgba(85,107,47,0.6)" stroke="#556B2F" strokeWidth={2}/>
+            <text x="505" y="148" textAnchor="middle" fontSize={11} fill="#fff" fontFamily="monospace">Tunnels</text>
+            <polygon points="430,210 580,210 580,310 430,310" fill="rgba(192,57,43,0.5)" stroke="#C0392B" strokeWidth={2}/>
+            <text x="505" y="268" textAnchor="middle" fontSize={10} fill="#fff" fontFamily="monospace">Livestock</text>
+            <polygon points="80,310 420,310 420,450 80,450" fill="rgba(230,126,34,0.4)" stroke="#E67E22" strokeWidth={2}/>
+            <text x="250" y="387" textAnchor="middle" fontSize={13} fill="#fff" fontFamily="monospace">Grazing Camps</text>
+            <polygon points="590,80 720,80 720,310 590,310" fill="rgba(47,47,47,0.6)" stroke="#2F2F2F" strokeWidth={2}/>
+            <text x="655" y="200" textAnchor="middle" fontSize={10} fill="#fff" fontFamily="monospace">Op. Hub</text>
+            <text x="700" y="440" fontSize={11} fill="rgba(47,47,47,0.5)" fontFamily="monospace">N ↑</text>
+          </svg>
+          <div style={{ position: 'absolute', top: 12, left: 14, fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '5px 10px', background: 'rgba(244,235,221,0.92)', border: '1px solid rgba(47,47,47,0.18)' }}>
+            BLK 25 Fourie Farm · Bethlehem, Free State
+          </div>
+        </div>
+        {/* Legend */}
+        <div className="legend-strip" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', gap: 12 }}>
+          {zones.map(({ color, label, meta }) => (
+            <div key={label} style={{ display: 'flex', gap: 10, alignItems: 'flex-start', padding: '14px 16px', border: '1px solid rgba(47,47,47,0.1)', background: 'var(--color-bone-deep)' }}>
+              <div style={{ width: 16, height: 16, background: color, flexShrink: 0, marginTop: 3 }} />
+              <div>
+                <div style={{ fontSize: 14, fontFamily: 'var(--font-serif)' }}>{label}</div>
+                {meta && <div style={{ fontSize: 11, color: 'var(--color-ink-mute)', letterSpacing: '0.1em', textTransform: 'uppercase' }}>{meta}</div>}
+              </div>
+            </div>
+          ))}
+        </div>
+        <div style={{ marginTop: 36 }}>
+          <Btn href="/our-farm" variant="outline-green" arrow>Explore The Farm</Btn>
+        </div>
+      </div>
+      <style>{`
+        @media(max-width:860px){.legend-strip{grid-template-columns:repeat(2,1fr)!important}}
+      `}</style>
+    </section>
+  );
+}
+
+/* ─────────────────── OUR JOURNEY ─────────────────── */
+function OurJourney() {
+  const milestones = [
+    { year: '2000', event: 'Farm acquired by family patriarch. Land in continuous agricultural use from day one.' },
+    { year: '2020', event: 'Transition planning begins. Long-term development plan takes shape for next-generation operation.' },
+    { year: '2026', event: 'Commercial farm development launched. Next generation takes the land into direct operation.' },
+    { year: '2027', event: 'Tunnel expansion and livestock growth phase initiated.' },
+    { year: 'Future', event: 'Integrated commercial agriculture — irrigation, agro-processing, feedlot, packhouse.' },
   ];
 
   return (
     <section className="section-pad" style={{ background: 'var(--color-bone-deep)' }}>
       <div className="container">
-        <div style={{ maxWidth: 720, marginBottom: 'clamp(40px,5vw,64px)' }}>
-          <SectionLabel number="06" label="Latest News" />
-          <h2 style={{ marginTop: 20 }}>News &amp; updates.</h2>
+        <div style={{ maxWidth: 720, marginBottom: 'clamp(56px,7vw,88px)' }}>
+          <SectionLabel number="" label="Our Journey" />
+          <h2 style={{ fontWeight: 400 }}>Two decades of patience. Now in full production.</h2>
+        </div>
+        <div style={{ position: 'relative' }}>
+          {/* Vertical line */}
+          <div style={{ position: 'absolute', left: 'clamp(48px,6vw,72px)', top: 0, bottom: 0, width: 1, background: 'rgba(122,92,62,0.3)' }} />
+          <div style={{ display: 'flex', flexDirection: 'column', gap: 0 }}>
+            {milestones.map(({ year, event }, i) => (
+              <div key={year} style={{ display: 'grid', gridTemplateColumns: 'clamp(96px,12vw,144px) 1fr', gap: 32, padding: 'clamp(24px,3vw,36px) 0', borderBottom: i < milestones.length - 1 ? '1px solid rgba(47,47,47,0.08)' : 'none', alignItems: 'start' }}>
+                <div style={{ textAlign: 'right', paddingRight: 'clamp(24px,3vw,40px)', position: 'relative' }}>
+                  <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(20px,2vw,26px)', color: year === 'Future' ? 'var(--color-brown)' : 'var(--color-green)', fontWeight: 600 }}>{year}</div>
+                  {/* Dot */}
+                  <div style={{ position: 'absolute', right: -6, top: '50%', transform: 'translateY(-50%)', width: 12, height: 12, background: year === 'Future' ? 'var(--color-brown)' : 'var(--color-green)', border: '3px solid var(--color-bone-deep)', zIndex: 2 }} />
+                </div>
+                <p style={{ color: 'var(--color-ink-mute)', lineHeight: 1.7, margin: 0, paddingTop: 2 }}>{event}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────── FARM PHILOSOPHY ─────────────────── */
+function FarmPhilosophy() {
+  const pillars = [
+    { title: 'Generational Stewardship', body: 'We farm as if the next generation is watching. Because they are.' },
+    { title: 'Sustainable Land Use', body: 'Every decision protects the soil, the water and the ecosystem.' },
+    { title: 'Community First', body: 'Our farm creates employment, local procurement and food security in the Free State.' },
+  ];
+
+  return (
+    <section className="section-pad">
+      <div className="container">
+        <div style={{ maxWidth: 720, marginBottom: 'clamp(56px,7vw,88px)' }}>
+          <SectionLabel number="" label="How We Farm" />
+          <h2 style={{ fontWeight: 400 }}>Stewardship over profit. Legacy over short-term gain.</h2>
+        </div>
+        <div className="pillars-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
+          {pillars.map(({ title, body }) => (
+            <div key={title} style={{ padding: '36px 32px', borderTop: '3px solid var(--color-brown)' }}>
+              <h3 style={{ marginBottom: 16, fontSize: 'clamp(20px,1.8vw,24px)', fontWeight: 600 }}>{title}</h3>
+              <p style={{ color: 'var(--color-ink-mute)', margin: 0, lineHeight: 1.75 }}>{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <style>{`@media(max-width:860px){.pillars-grid{grid-template-columns:1fr!important}}`}</style>
+    </section>
+  );
+}
+
+/* ─────────────────── IMPACT ─────────────────── */
+function ImpactSection() {
+  const impacts = [
+    { title: 'Youth Agriculture', body: 'Priority employment and skills development for youth under 35.' },
+    { title: 'Women in Farming', body: '50% female employment target across all permanent roles.' },
+    { title: 'Food Security', body: 'Producing staple crops and fresh vegetables for local and regional markets.' },
+    { title: 'Local Employment', body: '18–25 jobs in Year 1, growing to 33–44 by Year 3.' },
+  ];
+
+  return (
+    <section className="section-pad" style={{ background: 'var(--color-bone-deep)' }}>
+      <div className="container">
+        <div style={{ maxWidth: 720, marginBottom: 'clamp(56px,7vw,88px)' }}>
+          <SectionLabel number="" label="Our Impact" />
+          <h2 style={{ fontWeight: 400 }}>Agriculture that gives back.</h2>
+        </div>
+        <div className="impact-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: 24 }}>
+          {impacts.map(({ title, body }) => (
+            <div key={title} style={{ padding: '32px 24px', background: 'var(--color-bone)', border: '1px solid rgba(47,47,47,0.1)' }}>
+              <div style={{ width: 32, height: 3, background: 'var(--color-brown)', marginBottom: 20 }} />
+              <h3 style={{ fontSize: 'clamp(18px,1.6vw,22px)', marginBottom: 12 }}>{title}</h3>
+              <p style={{ color: 'var(--color-ink-mute)', margin: 0, fontSize: 15, lineHeight: 1.7 }}>{body}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+      <style>{`
+        @media(max-width:1100px){.impact-grid{grid-template-columns:repeat(2,1fr)!important}}
+        @media(max-width:560px){.impact-grid{grid-template-columns:1fr!important}}
+      `}</style>
+    </section>
+  );
+}
+
+/* ─────────────────── QUOTE CLOSER ─────────────────── */
+function QuoteCloser() {
+  return (
+    <section style={{ position: 'relative', padding: 'clamp(96px,11vw,160px) clamp(24px,5vw,96px)', background: 'var(--color-green-deep)', color: 'var(--color-bone)', overflow: 'hidden', textAlign: 'center' }}>
+      <span aria-hidden="true" style={{ position: 'absolute', top: -16, left: '50%', transform: 'translateX(-50%)', fontFamily: 'var(--font-serif)', fontSize: 'clamp(160px,20vw,280px)', lineHeight: 1, color: 'var(--color-brown)', opacity: 0.18, pointerEvents: 'none', userSelect: 'none' }}>
+        &ldquo;
+      </span>
+      <div className="container-sm" style={{ position: 'relative' }}>
+        <p style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(24px,2.8vw,42px)', lineHeight: 1.3, color: 'var(--color-bone)', maxWidth: '28ch', margin: '0 auto 32px', fontWeight: 400, fontStyle: 'italic' }}>
+          We are not simply farming land. We are continuing a legacy.
+        </p>
+        <div style={{ fontSize: 12, letterSpacing: '0.2em', textTransform: 'uppercase', color: 'var(--color-brown-light)' }}>
+          — Khatleng Farms
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ─────────────────── NEWS ─────────────────── */
+function NewsSection() {
+  const articles = [
+    { img: 'img · tunnel install', category: 'Operations', date: '15 · 04 · 2026', title: 'First tunnel commissioned ahead of Q2 planting cycle.', body: 'Tunnel 01 is online — drip irrigation, climate sensors and substrate beds calibrated for the first crop.' },
+    { img: 'img · cattle in veld', category: 'Livestock', date: '02 · 04 · 2026', title: 'Rotational grazing programme expanded to the eastern camp.', body: 'A measured rotation across natural Free State grass veld — better soil, better animals, better meat.' },
+    { img: 'img · grain fields', category: 'Grain', date: '22 · 03 · 2026', title: 'Maize planting season preparations underway.', body: 'Soil preparation completed across 80ha. Seed and input procurement finalised ahead of planting window.' },
+  ];
+
+  return (
+    <section className="section-pad">
+      <div className="container">
+        <div style={{ maxWidth: 720, marginBottom: 'clamp(48px,6vw,72px)' }}>
+          <SectionLabel number="" label="From The Farm" />
+          <h2 style={{ fontWeight: 400, marginTop: 20 }}>News &amp; updates.</h2>
         </div>
         <div className="news-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: 24 }}>
           {articles.map(({ img, category, date, title, body }) => (
             <article key={title} style={{ display: 'flex', flexDirection: 'column' }}>
               <ImagePlaceholder caption={img} height={220} style={{ marginBottom: 20 }} />
-              <div style={{ display: 'flex', gap: 14, alignItems: 'center', marginBottom: 12, fontSize: 12, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--color-ink-mute)' }}>
+              <div style={{ display: 'flex', gap: 14, alignItems: 'center', marginBottom: 12, fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-ink-mute)' }}>
                 <span style={{ color: 'var(--color-green)', border: '1px solid var(--color-green)', padding: '2px 8px' }}>{category}</span>
                 {date}
               </div>
-              <h3 style={{ fontSize: 'clamp(20px,1.8vw,26px)', lineHeight: 1.2, marginBottom: 8 }}>{title}</h3>
-              <p style={{ color: 'var(--color-ink-mute)', fontSize: 14, marginBottom: 0 }}>{body}</p>
-              <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: '1px solid rgba(26,26,26,0.12)', fontSize: 12, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-green)' }}>
+              <h3 style={{ fontSize: 'clamp(18px,1.7vw,23px)', lineHeight: 1.25, marginBottom: 8 }}>{title}</h3>
+              <p style={{ color: 'var(--color-ink-mute)', fontSize: 14, marginBottom: 0, lineHeight: 1.65 }}>{body}</p>
+              <div style={{ marginTop: 'auto', paddingTop: 16, borderTop: '1px solid rgba(47,47,47,0.1)', fontSize: 11, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--color-green)' }}>
                 Read article →
               </div>
             </article>

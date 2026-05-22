@@ -2,13 +2,13 @@ import Link from 'next/link';
 import SocialLink from './SocialLink';
 
 const navLinks = [
-  { href: '/',              label: 'Home' },
-  { href: '/our-story',    label: 'Our Story' },
-  { href: '/the-farm',     label: 'The Farm' },
-  { href: '/our-products', label: 'Our Products' },
-  { href: '/governance',   label: 'Governance' },
-  { href: '/invest',       label: 'Invest' },
-  { href: '/contact',      label: 'Contact Us' },
+  { href: '/',           label: 'Home' },
+  { href: '/about',      label: 'About Us' },
+  { href: '/our-farm',   label: 'Our Farm' },
+  { href: '/production', label: 'Production' },
+  { href: '/projects',   label: 'Projects' },
+  { href: '/gallery',    label: 'Gallery' },
+  { href: '/contact',    label: 'Contact' },
 ];
 
 export default function Footer() {
@@ -21,53 +21,36 @@ export default function Footer() {
       }}
     >
       <div
-        className="container"
-        style={{
-          display: 'grid',
-          gridTemplateColumns: '1.4fr 1fr 1fr 1fr',
-          gap: 48,
-        }}
+        className="container footer-grid"
+        style={{ display: 'grid', gridTemplateColumns: '1.4fr 1fr 1fr 1fr', gap: 48 }}
       >
         {/* Brand */}
         <div>
           <Link
             href="/"
             style={{
-              display: 'flex',
-              alignItems: 'center',
-              gap: 12,
-              fontFamily: 'var(--font-serif)',
-              fontSize: 22,
-              color: 'var(--color-bone)',
-              letterSpacing: '0.04em',
-              marginBottom: 24,
+              display: 'flex', alignItems: 'center', gap: 12,
+              fontFamily: 'var(--font-serif)', fontSize: 20, fontWeight: 600,
+              color: 'var(--color-bone)', letterSpacing: '0.02em', marginBottom: 24,
             }}
           >
             <span
               style={{
-                width: 36,
-                height: 36,
-                background: 'var(--color-green)',
-                display: 'grid',
-                placeItems: 'center',
-                color: 'var(--color-gold)',
-                fontFamily: 'var(--font-serif)',
-                fontSize: 18,
-                flexShrink: 0,
+                width: 36, height: 36, background: 'var(--color-green)',
+                display: 'grid', placeItems: 'center',
+                color: 'var(--color-bone)', fontFamily: 'var(--font-serif)',
+                fontSize: 17, fontWeight: 700, flexShrink: 0,
               }}
             >
-              N
+              K
             </span>
-            <span>Nkoenyane Family Trust</span>
+            <span>Khatleng Farms</span>
           </Link>
           <p
             style={{
-              fontFamily: 'var(--font-serif)',
-              fontSize: 22,
-              color: 'var(--color-gold)',
-              maxWidth: '22ch',
-              lineHeight: 1.25,
-              margin: 0,
+              fontFamily: 'var(--font-serif)', fontSize: 20,
+              color: 'var(--color-brown-light)', maxWidth: '22ch',
+              lineHeight: 1.3, margin: '0 0 16px',
             }}
           >
             Cultivating Futures. Grounded in Purpose.
@@ -125,58 +108,40 @@ export default function Footer() {
               </svg>
             </SocialLink>
           </div>
-          <p style={{ marginTop: 20, fontSize: 13, color: 'var(--color-gold)' }}>
-            Partnership &amp; investor enquiries:
-          </p>
-          <Link
-            href="/invest"
-            style={{ fontSize: 13, color: 'var(--color-gold)', letterSpacing: '0.06em' }}
-          >
-            Request memorandum →
-          </Link>
         </div>
       </div>
 
       {/* Bottom strip */}
       <div
-        className="container"
+        className="container footer-bottom"
         style={{
-          marginTop: 56,
-          paddingTop: 20,
-          borderTop: '1px solid rgba(248,245,238,0.15)',
-          display: 'flex',
-          justifyContent: 'space-between',
-          fontSize: 12,
-          color: 'rgba(248,245,238,0.5)',
-          letterSpacing: '0.08em',
+          marginTop: 56, paddingTop: 20,
+          borderTop: '1px solid rgba(244,235,221,0.15)',
+          display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: 8,
+          fontSize: 12, color: 'rgba(244,235,221,0.45)', letterSpacing: '0.07em',
         }}
       >
-        <span>© 2026 The Nkoenyane Family Trust | Trust IT 1254/00</span>
+        <span>© 2026 Khatleng Farms | Operated by Nkoenyane Family Trust | IT 1254/00</span>
         <span>Bethlehem · Free State · ZA</span>
       </div>
 
       <style>{`
         @media (max-width: 860px) {
-          footer > div:first-child { grid-template-columns: 1fr !important; }
-          footer > div:last-child  { flex-direction: column; gap: 12px; }
+          .footer-grid { grid-template-columns: 1fr !important; }
         }
       `}</style>
     </footer>
   );
 }
 
-
 const colHeadStyle: React.CSSProperties = {
   fontFamily: 'var(--font-sans)',
-  fontSize: 12,
-  letterSpacing: '0.18em',
+  fontSize: 11, letterSpacing: '0.18em',
   textTransform: 'uppercase',
-  color: 'var(--color-gold)',
-  marginBottom: 18,
-  fontWeight: 500,
+  color: 'var(--color-brown-light)',
+  marginBottom: 18, fontWeight: 500,
 };
 
 const linkStyle: React.CSSProperties = {
-  fontSize: 14,
-  color: 'rgba(248,245,238,0.75)',
+  fontSize: 14, color: 'rgba(244,235,221,0.7)',
 };
