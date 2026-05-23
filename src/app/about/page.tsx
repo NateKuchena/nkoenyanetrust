@@ -179,24 +179,24 @@ function JourneyTimeline() {
 function TeamSection() {
   const team = [
     {
-      name: 'Mmatebogo Elizabeth Nkoenyane',
-      role: 'Trustee & Farm Director',
-      bio: 'Brings decades of professional experience to farm governance and strategic direction. Full-time on the farm from May 2026, providing leadership, mentorship and long-term vision.',
+      name: 'Daniel Tongoona',
+      role: 'Strategy, Development & Operations',
+      bio: 'A Civil Engineer with experience in infrastructure, project delivery and business development. Leads strategic planning, farm expansion, capital projects, mechanisation planning and operational development. Focused on building Khatleng Farms into a sustainable and commercially driven agricultural enterprise.',
     },
     {
       name: 'Tshimoloho Hlapane',
-      role: 'Managing Person — Operations',
-      bio: 'Operational backbone of the farm. Active on the land since 2024, overseeing livestock management, procurement, day-to-day operations and technology integration.',
+      role: 'Farm Operations & Livestock Management',
+      bio: 'Oversees day-to-day farm activities including livestock management, procurement, field operations and implementation of on-farm systems. Supports operational efficiency and practical execution across the business.',
     },
     {
       name: 'Tshenolo Hlapane',
-      role: 'Financial Governance',
-      bio: 'Responsible for financial reporting, internal controls and compliance. Brings formal accounting training and a disciplined approach to farm financial management.',
+      role: 'Finance & Administration',
+      bio: 'Responsible for financial reporting, internal controls, budgeting and administrative coordination. Brings structured financial oversight to support responsible growth and long-term sustainability.',
     },
     {
       name: 'Tshebeletso Hlapane',
-      role: 'Legal & Compliance',
-      bio: 'Oversees all legal and regulatory matters. A decade of governance and compliance experience ensures the farm operates to the highest standards.',
+      role: 'Legal & Governance',
+      bio: 'Oversees legal, regulatory and governance matters to ensure the business maintains strong compliance standards and operates with integrity.',
     },
   ];
 

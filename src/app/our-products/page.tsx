@@ -8,7 +8,7 @@ import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
 
 export const metadata: Metadata = {
   title: 'Our Products | The Nkoenyane Family Trust',
-  description: 'Four income streams from BLK 25 Fourie Farm — dryland crops, tunnel vegetables, commercial livestock, and beef stud programme.',
+  description: 'Four income streams from Khatleng Farms — dryland crops, tunnel vegetables, commercial livestock, and beef stud programme.',
 };
 
 export default function OurProductsPage() {
@@ -95,7 +95,7 @@ function DrylandCrops() {
     <ProductSection
       num="01" label="Dryland Crops"
       title="Yellow Maize and Sunflower — the backbone."
-      body="80ha of yellow maize targeting 5.5 t/ha at R3,500/ton. 20ha of sunflower at 1.8 t/ha and R8,500/ton. Crop rotation reduces input costs, improves soil health, and breaks pest cycles. Off-take via AFGRI Bethlehem Silo at SAFEX spot price."
+      body="80ha of yellow maize targeting 5.5 t/ha at R3,500/ton. 20ha of sunflower at 1.8 t/ha and R8,500/ton. Crop rotation reduces input costs, improves soil health, and breaks pest cycles. Off-take via established grain market channels at SAFEX spot price."
       imgCaption="img · yellow maize fields · harvest · warm tones"
       facts={[
         { k: 'Maize yield target', v: '5.5 t/ha' },
@@ -103,7 +103,7 @@ function DrylandCrops() {
         { k: 'Sunflower yield', v: '1.8 t/ha' },
         { k: 'Sunflower price', v: 'R8,500/ton' },
         { k: 'Year 1 income', v: 'R1,846,000' },
-        { k: 'Buyer', v: 'AFGRI Bethlehem Silo' },
+        { k: 'Buyer', v: 'established grain market channels' },
       ]}
     />
   );
@@ -114,13 +114,13 @@ function TunnelVegetables() {
     <ProductSection
       num="02" label="Tunnel Vegetables"
       title="Eight tunnels. Year-round production."
-      body="8 tunnels, 8m × 30m each, with drip irrigation and raised beds. Multi-crop cycles of tomatoes, peppers, spinach, and lettuce run back-to-back throughout the year. First harvest October 2026, reaching full production by December."
+      body="Tunnel farming — Phase 1 operational, with drip irrigation and raised beds. Multi-crop cycles of tomatoes, peppers, spinach, and lettuce run back-to-back throughout the year. First harvest October 2026, reaching full production by December."
       imgCaption="img · production tunnel interior · tomatoes · fresh produce"
       facts={[
-        { k: 'Tunnels', v: '8 × (8m × 30m)' },
+        { k: 'Tunnels', v: 'Phase 1 operational' },
         { k: 'First harvest', v: 'October 2026 — R35,000' },
         { k: 'Full production', v: 'R50,000–R55,000/month' },
-        { k: 'Primary buyer', v: 'Bethlehem Fresh Produce Market' },
+        { k: 'Primary buyer', v: 'local fresh produce markets' },
         { k: 'Secondary buyers', v: 'Local retailers & restaurants' },
       ]}
       reverse
@@ -134,7 +134,7 @@ function CommercialLivestock() {
     <ProductSection
       num="03" label="Livestock"
       title="Commercial cattle and sheep — auction-ready."
-      body="Opening herd: 50 cattle (Bonsmara/Simmental) and 50 sheep. Monthly cattle auctions and quarterly sheep auctions at Bethlehem Livestock Auctions. Full seller registration confirmed. Herd quality anchored by 5 stud bulls."
+      body="Opening herd: 50 cattle (Bonsmara/Simmental) and 50 sheep. Monthly cattle auctions and quarterly sheep auctions at regional livestock auctions. Full seller registration confirmed. Herd quality anchored by 5 stud bulls."
       imgCaption="img · cattle herd · Free State veld · golden light"
       facts={[
         { k: 'Cattle', v: '50 head' },
@@ -142,7 +142,7 @@ function CommercialLivestock() {
         { k: 'Year 1 cattle income', v: 'R120,000' },
         { k: 'Year 1 sheep income', v: 'R60,000' },
         { k: 'Auction frequency', v: 'Monthly (cattle) / Quarterly (sheep)' },
-        { k: 'Venue', v: 'Bethlehem Livestock Auctions' },
+        { k: 'Venue', v: 'regional livestock auctions' },
       ]}
     />
   );

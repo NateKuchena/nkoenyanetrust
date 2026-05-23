@@ -278,10 +278,10 @@ function RoadmapSection() {
 
 function OfftakeSection() {
   const buyers = [
-    { commodity: 'Maize + Sunflower', buyer: 'AFGRI Bethlehem Silo', arrangement: 'SAFEX spot price at delivery', status: 'Letter of intent' },
-    { commodity: 'Cattle', buyer: 'Bethlehem Livestock Auctions', arrangement: 'Monthly auction', status: 'Seller registration confirmed' },
-    { commodity: 'Sheep', buyer: 'Bethlehem Livestock Auctions', arrangement: 'Quarterly auction', status: 'Seller registration confirmed' },
-    { commodity: 'Vegetables', buyer: 'Bethlehem Fresh Produce Market', arrangement: 'Weekly fresh delivery', status: 'Letter of intent' },
+    { commodity: 'Maize + Sunflower', buyer: 'established grain market channels', arrangement: 'SAFEX spot price at delivery', status: 'Letter of intent' },
+    { commodity: 'Cattle', buyer: 'regional livestock auctions', arrangement: 'Monthly auction', status: 'Seller registration confirmed' },
+    { commodity: 'Sheep', buyer: 'regional livestock auctions', arrangement: 'Quarterly auction', status: 'Seller registration confirmed' },
+    { commodity: 'Vegetables', buyer: 'local fresh produce markets', arrangement: 'Weekly fresh delivery', status: 'Letter of intent' },
     { commodity: 'Vegetables', buyer: 'Local retailers / restaurants', arrangement: 'Direct weekly supply, fixed pricing', status: 'Negotiation active' },
   ];
 

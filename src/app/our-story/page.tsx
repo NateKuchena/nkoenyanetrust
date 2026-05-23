@@ -64,7 +64,7 @@ function OriginSection() {
             <SectionLabel number="01" label="The Beginning" />
             <h2 style={{ marginBottom: 24 }}>Planted in 2000. Growing ever since.</h2>
             <p className="lede" style={{ marginBottom: 20 }}>
-              The Nkoenyane Family Trust acquired BLK 25 Fourie Farm in Bethlehem, Free State in the year 2000 —
+              The Nkoenyane Family Trust acquired Khatleng Farms in Bethlehem, Free State in the year 2000 —
               200 hectares of freehold agricultural land held continuously and unencumbered for 26 years.
             </p>
             <p style={{ color: 'var(--color-ink-mute)' }}>
@@ -121,7 +121,7 @@ function EthosSection() {
 
 function StructureSection() {
   const facts = [
-    { label: 'Trust Registration', value: 'IT 1254/00' },
+    { label: 'Trust Registration', value: '—' },
     { label: 'Governing Law', value: 'South African Trust Law' },
     { label: 'Land Title', value: '200ha Freehold, Unencumbered' },
     { label: 'Ownership', value: '100% Black-Owned, Female-Led' },
@@ -137,7 +137,7 @@ function StructureSection() {
             <SectionLabel number="03" label="Our Structure" />
             <h2 style={{ marginBottom: 24 }}>Governed for the long term.</h2>
             <p className="lede" style={{ marginBottom: 20 }}>
-              The Nkoenyane Family Trust (IT 1254/00) operates under South African trust law with fiduciary
+              The Nkoenyane Family Trust (—) operates under South African trust law with fiduciary
               oversight, institutional controls, and a governance framework designed for generational continuity.
             </p>
             <p style={{ color: 'var(--color-ink-mute)' }}>

@@ -4,6 +4,7 @@ import Btn from '@/components/ui/Btn';
 import Divider from '@/components/ui/Divider';
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
 import SectionLabel from '@/components/ui/SectionLabel';
+import NewsletterSignup from '@/components/ui/NewsletterSignup';
 
 export default function HomePage() {
   return (
@@ -30,6 +31,8 @@ export default function HomePage() {
         <QuoteCloser />
         <Divider from="#3D4F1F" to="#F4EBDD" />
         <NewsSection />
+        <Divider from="#F4EBDD" to="#3D4F1F" />
+        <NewsletterSignup />
       </main>
       <Footer />
     </>
@@ -96,13 +99,12 @@ function StatsStrip() {
   const stats = [
     { number: '200', unit: 'ha', label: 'Freehold Land' },
     { number: '26', unit: 'yrs', label: 'In the Family' },
-    { number: '4', label: 'Production Zones' },
     { number: 'Free State', label: 'Bethlehem Highlands' },
     { number: '1,651', unit: 'm', label: 'Above Sea Level' },
   ];
   return (
     <>
-      <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(5,1fr)', background: 'var(--color-bone-deep)', borderTop: '1px solid rgba(47,47,47,0.1)', borderBottom: '1px solid rgba(47,47,47,0.1)' }}>
+      <div className="stats-grid" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', background: 'var(--color-bone-deep)', borderTop: '1px solid rgba(47,47,47,0.1)', borderBottom: '1px solid rgba(47,47,47,0.1)' }}>
         {stats.map(({ number, unit, label }, i) => (
           <div key={i} style={{ padding: 'clamp(32px,4vw,52px) clamp(16px,2.5vw,32px)', borderRight: i < stats.length - 1 ? '1px solid rgba(47,47,47,0.1)' : 'none' }}>
             <div style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(26px,3vw,44px)', color: 'var(--color-green)', lineHeight: 1, marginBottom: 10 }}>
@@ -130,7 +132,7 @@ function ProductionZones() {
     { icon: '🐄', name: 'Cattle', desc: 'Commercial herd + Bonsmara/Simmental stud programme', status: 'Live', statusColor: 'var(--color-green)' },
     { icon: '🐑', name: 'Sheep', desc: 'Commercial flock, rotational grazing', status: 'Live', statusColor: 'var(--color-green)' },
     { icon: '🥚', name: 'Free Range Eggs', desc: 'Small-scale, premium local supply', status: 'Coming Soon', statusColor: 'var(--color-brown)' },
-    { icon: '🌱', name: 'Tunnel Farming', desc: '8 protected tunnels — tomatoes, peppers, spinach, lettuce', status: 'Live', statusColor: 'var(--color-green)' },
+    { icon: '🌱', name: 'Tunnel Farming', desc: 'Protected tunnel farming — tomatoes, peppers, spinach, lettuce. Phase 1 operational.', status: 'Live', statusColor: 'var(--color-green)' },
   ];
 
   return (
@@ -203,7 +205,7 @@ function WhyBethlehem() {
 function FarmMap() {
   const zones = [
     { color: '#4A7FCB', label: 'Grain Fields', meta: '100ha' },
-    { color: '#556B2F', label: 'Tunnel Farming', meta: '8 tunnels' },
+    { color: '#556B2F', label: 'Tunnel Farming', meta: 'Phase 1 operational' },
     { color: '#C0392B', label: 'Livestock Handling', meta: '' },
     { color: '#E67E22', label: 'Grazing Camps', meta: '106ha' },
     { color: '#2F2F2F', label: 'Operational Hub', meta: '' },
@@ -231,7 +233,7 @@ function FarmMap() {
             <text x="700" y="440" fontSize={11} fill="rgba(47,47,47,0.5)" fontFamily="monospace">N ↑</text>
           </svg>
           <div style={{ position: 'absolute', top: 12, left: 14, fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '5px 10px', background: 'rgba(244,235,221,0.92)', border: '1px solid rgba(47,47,47,0.18)' }}>
-            BLK 25 Fourie Farm · Bethlehem, Free State
+            Khatleng Farms · Bethlehem, Free State
           </div>
         </div>
         {/* Legend */}
@@ -413,3 +415,4 @@ function NewsSection() {
     </section>
   );
 }
+

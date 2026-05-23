@@ -31,7 +31,7 @@ export async function POST(req: NextRequest) {
     },
     body: JSON.stringify({
       from: 'website@nkoenyane.co.za',
-      to: 'ntebo@hlapane.com',
+      to: 'daniel@khatleng.com',
       reply_to: email,
       subject: `[Memorandum Request] ${name}${org ? ` — ${org}` : ''}`,
       html,

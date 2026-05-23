@@ -6,7 +6,7 @@ import Divider from '@/components/ui/Divider';
 import ImagePlaceholder from '@/components/ui/ImagePlaceholder';
 
 export const metadata: Metadata = {
-  title: 'BLK 25 Fourie Farm | The Nkoenyane Family Trust',
+  title: 'Khatleng Farms | The Nkoenyane Family Trust',
   description: '200 hectares of freehold agricultural land in Bethlehem, Free State. Dryland crops, tunnel vegetables, livestock, and beef stud operations.',
 };
 
@@ -49,7 +49,7 @@ function PageHero() {
       <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg,rgba(0,0,0,0.15) 0%,rgba(0,0,0,0.6) 60%,rgba(0,0,0,0.78) 100%)' }} />
       <div style={{ position: 'relative', zIndex: 2, maxWidth: 1320, margin: '0 auto', width: '100%' }}>
         <div className="numlabel" style={{ color: 'var(--color-gold-soft)', marginBottom: 20 }}><span>—</span>BLK 25 FOURIE FARM · BETHLEHEM, FREE STATE</div>
-        <h1 style={{ color: 'var(--color-bone)', maxWidth: '16ch', marginBottom: 20 }}>BLK 25 Fourie Farm</h1>
+        <h1 style={{ color: 'var(--color-bone)', maxWidth: '16ch', marginBottom: 20 }}>Khatleng Farms</h1>
         <p style={{ color: 'rgba(248,245,238,0.85)', fontSize: 'clamp(17px,1.4vw,21px)', maxWidth: '52ch' }}>
           Bethlehem, Free State — 200 hectares of freehold agricultural land.
         </p>
@@ -60,7 +60,7 @@ function PageHero() {
 
 function FarmFactsBar() {
   const facts = [
-    { label: 'GPS Coordinates', value: 'Lat −28.138 / Long 28.141' },
+    { label: 'GPS Coordinates', value: 'Bethlehem, Free State' },
     { label: 'Altitude', value: '1,651m above sea level' },
     { label: 'Annual Rainfall', value: '772mm average' },
     { label: 'Water Supply', value: '3 Boreholes + Eskom + Solar' },
@@ -84,7 +84,7 @@ function FarmFactsBar() {
 function MasterplanSection() {
   const zones = [
     { color: '#4A7FCB', name: 'Dryland Crops', meta: '100ha — Yellow Maize & Sunflower' },
-    { color: '#3D5220', name: 'Production Tunnels', meta: '8 tunnels, 8m × 30m each' },
+    { color: '#3D5220', name: 'Production Tunnels', meta: 'Tunnel farming — Phase 1 operational' },
     { color: '#C0392B', name: 'Livestock Handling', meta: 'Cattle & sheep pens, loading ramps' },
     { color: '#E67E22', name: 'Grazing Camps', meta: '80.7ha improved + 25.2ha natural' },
     { color: '#1A1A1A', name: 'Operational Hub', meta: 'Workshop, silos, boreholes, homestead' },
@@ -116,7 +116,7 @@ function MasterplanSection() {
             <text x="700" y="430" fontSize={11} fill="rgba(26,26,26,0.6)" fontFamily="monospace">N ↑</text>
           </svg>
           <div style={{ position: 'absolute', top: 12, left: 16, fontFamily: 'var(--font-mono)', fontSize: 11, letterSpacing: '0.12em', textTransform: 'uppercase', padding: '5px 10px', background: 'rgba(248,245,238,0.9)', border: '1px solid rgba(26,26,26,0.18)' }}>
-            BLK 25 Fourie Farm · Schematic
+            Khatleng Farms · Schematic
           </div>
         </div>
 
@@ -188,22 +188,22 @@ function OperationalZones() {
     {
       num: 'i.',
       title: 'Dryland Crops',
-      body: 'The backbone of the farm\'s annual income. 80ha of yellow maize targeting 5.5 t/ha at R3,500/ton, rotated with 20ha of sunflower at 1.8 t/ha and R8,500/ton. SAFEX spot price at delivery through AFGRI Bethlehem Silo.',
-      facts: [{ k: 'Area', v: '100ha total' }, { k: 'Crops', v: 'Yellow Maize + Sunflower' }, { k: 'Off-take', v: 'AFGRI Bethlehem Silo' }, { k: 'Year 1 Income', v: 'R1,846,000' }],
+      body: 'The backbone of the farm\'s annual income. 80ha of yellow maize targeting 5.5 t/ha at R3,500/ton, rotated with 20ha of sunflower at 1.8 t/ha and R8,500/ton. SAFEX spot price at delivery through established grain market channels.',
+      facts: [{ k: 'Area', v: '100ha total' }, { k: 'Crops', v: 'Yellow Maize + Sunflower' }, { k: 'Off-take', v: 'established grain market channels' }, { k: 'Year 1 Income', v: 'R1,846,000' }],
       imgCaption: 'img · dryland maize fields · golden hour',
     },
     {
       num: 'ii.',
       title: 'Production Tunnels',
-      body: '8 tunnels, 8m × 30m each, with drip irrigation and raised beds. Multi-crop cycles run year-round: tomatoes, peppers, spinach, and lettuce. First harvest October 2026 — R35,000/month growing to R55,000/month by Year 2.',
-      facts: [{ k: 'Tunnels', v: '8 × (8m × 30m)' }, { k: 'Crops', v: 'Tomatoes, Peppers, Spinach, Lettuce' }, { k: 'First Harvest', v: 'October 2026' }, { k: 'Buyer', v: 'Bethlehem Fresh Produce Market' }],
+      body: 'Tunnel farming — Phase 1 operational, with drip irrigation and raised beds. Multi-crop cycles run year-round: tomatoes, peppers, spinach, and lettuce. First harvest October 2026 — R35,000/month growing to R55,000/month by Year 2.',
+      facts: [{ k: 'Tunnels', v: 'Phase 1 operational' }, { k: 'Crops', v: 'Tomatoes, Peppers, Spinach, Lettuce' }, { k: 'First Harvest', v: 'October 2026' }, { k: 'Buyer', v: 'local fresh produce markets' }],
       imgCaption: 'img · tunnel interior · vegetables growing',
     },
     {
       num: 'iii.',
       title: 'Livestock Handling',
       body: 'Opening herd of 50 cattle (3 bulls, 39 cows, 8 calves) and 50 sheep (2 rams, 37 ewes, 11 young ewes). Full auction-ready infrastructure: holding pens, loading ramps, crush and working systems.',
-      facts: [{ k: 'Cattle', v: '50 head (Bonsmara/Simmental)' }, { k: 'Sheep', v: '50 head' }, { k: 'Stud Bulls', v: '5' }, { k: 'Auction', v: 'Bethlehem Livestock Auctions' }],
+      facts: [{ k: 'Cattle', v: '50 head (Bonsmara/Simmental)' }, { k: 'Sheep', v: '50 head' }, { k: 'Stud Bulls', v: '5' }, { k: 'Auction', v: 'regional livestock auctions' }],
       imgCaption: 'img · cattle in pens · livestock facility',
     },
     {

@@ -147,7 +147,7 @@ function SuccessionPipeline() {
 
 function GovernanceFramework() {
   const pillars = [
-    { num: 'i.', title: 'Legal Structure', body: 'Trust Registration IT 1254/00 under South African trust law. Fiduciary oversight, institutional controls, and clear beneficiary rights defined in the trust deed.' },
+    { num: 'i.', title: 'Legal Structure', body: 'Operated under South African trust law. Fiduciary oversight, institutional controls, and clear beneficiary rights defined in the trust deed.' },
     { num: 'ii.', title: 'Compliance by Design', body: 'Full BFS compliance (est. 46/50 scorecard). 10% net profit sharing for all permanent staff. Statutory reporting, audited annuals, and quarterly investor updates from Year 1.' },
     { num: 'iii.', title: 'Institutional Controls', body: 'SAICA-compliant internal control framework. Independent compliance reviews. Investor-grade financial modelling maintained by a chartered accountant (CTA in progress).' },
   ];

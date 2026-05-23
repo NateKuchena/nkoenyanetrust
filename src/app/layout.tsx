@@ -43,17 +43,17 @@ const structuredData = {
       name: "Khatleng Farms",
       alternateName: "Nkoenyane Family Trust trading as Khatleng Farms",
       url: "https://www.khatlengfarms.co.za",
-      email: "ntebo@hlapane.com",
-      telephone: "+27824118481",
+      email: "daniel@khatleng.com",
+      telephone: "+27691010076",
       description:
         "A commercial agricultural enterprise in Bethlehem, Free State — producing grain, livestock and fresh vegetables from 200 hectares of freehold farmland.",
       foundingDate: "2000",
-      legalName: "Nkoenyane Family Trust (IT 1254/00)",
+      legalName: "Nkoenyane Family Trust",
     },
     {
       "@type": "LocalBusiness",
       "@id": "https://www.khatlengfarms.co.za/#farm",
-      name: "Khatleng Farms — BLK 25 Fourie Farm",
+      name: "Khatleng Farms",
       parentOrganization: { "@id": "https://www.khatlengfarms.co.za/#org" },
       address: {
         "@type": "PostalAddress",
@@ -62,7 +62,6 @@ const structuredData = {
         postalCode: "9701",
         addressCountry: "ZA",
       },
-      geo: { "@type": "GeoCoordinates", latitude: -28.138, longitude: 28.141 },
     },
   ],
 };

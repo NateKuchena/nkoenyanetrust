@@ -149,7 +149,7 @@ function ContactForm() {
           </Btn>
           {status === 'error' && (
             <p style={{ color: '#C0392B', fontSize: 13, marginTop: 10 }}>
-              Something went wrong. Please email ntebo@hlapane.com directly.
+              Something went wrong. Please email daniel@khatleng.com directly.
             </p>
           )}
         </div>
@@ -165,31 +165,18 @@ function ContactDetails() {
       <SectionLabel number="" label="Contact Details" />
       <div style={{ marginBottom: 36 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-brown)', marginBottom: 10 }}>Email</div>
-        <a href="mailto:ntebo@hlapane.com" style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--color-green)' }}>ntebo@hlapane.com</a>
+        <a href="mailto:daniel@khatleng.com" style={{ fontFamily: 'var(--font-serif)', fontSize: 20, color: 'var(--color-green)' }}>daniel@khatleng.com</a>
       </div>
       <div style={{ marginBottom: 36 }}>
         <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-brown)', marginBottom: 10 }}>Phone</div>
-        <div style={{ fontFamily: 'var(--font-serif)', fontSize: 19, lineHeight: 1.5 }}>
-          <a href="tel:+27824118481" style={{ display: 'block' }}>082 411 8481</a>
-          <a href="tel:+27117609348" style={{ display: 'block' }}>011 760 9348</a>
-        </div>
+        <a href="tel:+27691010076" style={{ fontFamily: 'var(--font-serif)', fontSize: 19, display: 'block' }}>069 101 0076</a>
       </div>
-      <div style={{ display: 'flex', flexDirection: 'column', gap: 16 }}>
+      <div>
         <div style={{ padding: '22px 20px', border: '1px solid rgba(47,47,47,0.12)', background: 'var(--color-bone-deep)' }}>
-          <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-brown)', marginBottom: 10 }}>Farm</div>
+          <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-brown)', marginBottom: 10 }}>Farm Location</div>
           <address style={{ fontStyle: 'normal', fontFamily: 'var(--font-serif)', fontSize: 17, lineHeight: 1.55 }}>
-            BLK 25 Fourie Farm<br />
             Bethlehem, Free State<br />
-            South Africa, 9701<br />
-            <span style={{ fontSize: 13, color: 'var(--color-ink-mute)', fontFamily: 'var(--font-sans)' }}>GPS: Lat −28.138, Long 28.141</span>
-          </address>
-        </div>
-        <div style={{ padding: '22px 20px', border: '1px solid rgba(47,47,47,0.12)', background: 'var(--color-bone-deep)' }}>
-          <div style={{ fontSize: 11, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--color-brown)', marginBottom: 10 }}>Office</div>
-          <address style={{ fontStyle: 'normal', fontFamily: 'var(--font-serif)', fontSize: 17, lineHeight: 1.55 }}>
-            Unit 9, Timbavati Place B<br />
-            470 Timbavati Street<br />
-            Moreletapark, Pretoria
+            South Africa, 9701
           </address>
         </div>
       </div>

@@ -26,6 +26,8 @@ export default function ProductionPage() {
         <Divider from="#F4EBDD" to="#E8D5C0" />
         <FreeRangeEggs />
         <Divider from="#E8D5C0" to="#3D4F1F" />
+        <FreshFromFarm />
+        <Divider from="#F4EBDD" to="#3D4F1F" />
         <FutureOutlook />
       </main>
       <Footer />
@@ -94,13 +96,13 @@ function GrainProduction() {
       <ProductRow
         label="Grain Production"
         title="Yellow Maize — the backbone of the farm."
-        body="80ha of yellow maize in dryland production. Rotated with 20ha of sunflower to improve soil health, manage input costs and break pest cycles. Sold at SAFEX spot price through AFGRI Bethlehem Silo."
+        body="80ha of yellow maize in dryland production. Rotated with 20ha of sunflower to improve soil health, manage input costs and break pest cycles. Sold through established grain market channels at prevailing commodity prices."
         imgCaption="img · yellow maize fields · harvest · Free State"
         details={[
           { k: 'Maize area', v: '80ha' },
           { k: 'Sunflower area', v: '20ha' },
           { k: 'System', v: 'Dryland, rotational' },
-          { k: 'Off-take', v: 'AFGRI Bethlehem Silo' },
+          { k: 'Market', v: 'Established grain market channels' },
         ]}
       />
     </>
@@ -111,14 +113,14 @@ function TunnelVegetables() {
   return (
     <ProductRow
       label="Tunnel Farming"
-      title="Eight tunnels. Fresh vegetables, year-round."
-      body="8 production tunnels, 8m × 30m each, with drip irrigation and raised beds. Multi-crop cycles of tomatoes, peppers, spinach and lettuce run back-to-back throughout the year. First harvest October 2026."
+      title="Protected tunnel farming. Fresh vegetables, year-round."
+      body="Tunnel farming infrastructure currently in development — Phase 1 operational. Protected growing environment with drip irrigation, producing tomatoes, peppers, spinach and lettuce. Supplied to local fresh produce markets and direct retail buyers."
       imgCaption="img · tunnel interior · tomatoes growing"
       details={[
-        { k: 'Tunnels', v: '8 × (8m × 30m)' },
+        { k: 'Status', v: 'Phase 1 operational' },
         { k: 'Irrigation', v: 'Drip system' },
         { k: 'Crops', v: 'Tomatoes, Peppers, Spinach, Lettuce' },
-        { k: 'Primary buyer', v: 'Bethlehem Fresh Produce Market' },
+        { k: 'Market', v: 'Local markets and direct retail buyers' },
       ]}
       reverse
       bg="#E8D5C0"
@@ -132,13 +134,13 @@ function LivestockSection() {
       <ProductRow
         label="Livestock"
         title="Commercial cattle and sheep — built to grow."
-        body="Opening herd of 50 cattle and 50 sheep, with a Bonsmara/Simmental stud programme anchored by 5 stud bulls. Monthly cattle auctions and quarterly sheep auctions at Bethlehem Livestock Auctions."
+        body="Opening herd of 50 cattle and 50 sheep, with a Bonsmara/Simmental stud programme anchored by 5 stud bulls. Sold through regional livestock auctions with consistent, predictable income cycles."
         imgCaption="img · cattle herd · Free State veld · morning"
         details={[
           { k: 'Cattle', v: '50 head (Bonsmara/Simmental)' },
           { k: 'Sheep', v: '50 head' },
           { k: 'Stud bulls', v: '5' },
-          { k: 'Auctions', v: 'Bethlehem Livestock Auctions' },
+          { k: 'Market', v: 'Regional livestock auctions' },
         ]}
       />
     </>
@@ -167,6 +169,42 @@ function FreeRangeEggs() {
         </div>
       </div>
       <style>{`@media(max-width:860px){.eggs-grid{grid-template-columns:1fr!important}}`}</style>
+    </section>
+  );
+}
+
+function FreshFromFarm() {
+  return (
+    <section className="section-pad" style={{ background: 'var(--color-bone-deep)' }}>
+      <div className="container">
+        <div
+          className="fresh-grid"
+          style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 'clamp(56px,8vw,112px)', alignItems: 'center' }}
+        >
+          <div>
+            <SectionLabel number="" label="Fresh From the Farm" />
+            <h2 style={{ fontWeight: 400, marginBottom: 24 }}>Interested in Our Produce?</h2>
+            <p style={{ color: 'var(--color-ink-mute)', lineHeight: 1.8, marginBottom: 28 }}>
+              We supply fresh vegetables, eggs, grain and red meat to local retailers, restaurants and community buyers in and around Bethlehem. Get in touch to discuss availability and pricing.
+            </p>
+            <Btn href="/contact" variant="green" arrow>Contact Us</Btn>
+          </div>
+          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+            {[
+              { label: 'Yellow Maize', desc: 'commercial grain farming Bethlehem' },
+              { label: 'Tunnel Vegetables', desc: 'tunnel vegetables Free State' },
+              { label: 'Red Meat', desc: 'livestock farming Bethlehem' },
+              { label: 'Free Range Eggs', desc: 'free-range eggs Bethlehem' },
+            ].map(({ label, desc }) => (
+              <div key={label} style={{ padding: '20px 18px', background: 'var(--color-bone)', border: '1px solid rgba(47,47,47,0.1)' }}>
+                <div style={{ fontSize: 12, color: 'var(--color-brown)', letterSpacing: '0.12em', textTransform: 'uppercase', marginBottom: 6 }}>{label}</div>
+                <div style={{ fontSize: 12, color: 'var(--color-ink-mute)', lineHeight: 1.4 }}>{desc}</div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+      <style>{`@media(max-width:860px){.fresh-grid{grid-template-columns:1fr!important}}`}</style>
     </section>
   );
 }
